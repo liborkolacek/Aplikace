@@ -1,0 +1,21 @@
+﻿@model Aplikace.Models.Pot
+
+@{
+    ViewData["Title"] = "Nový záznam";
+}
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Size" class="control-label"></label>
+        <input asp-for="Size" class="form-control" />
+        <span asp-validation-for="Size" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>

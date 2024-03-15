@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Libor Koláček" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Aplikace.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-lg-5">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">Libor Koláček</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Domů</a></li>
+                        <!--<li class="nav-item">
+                            <a class="nav-link" href="zivotopis.html">Životopis</a></li>-->
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Pots" asp-action="Index">Aplikace</a></li>
+                        <!--<li class="nav-item">
+                            <a class="nav-link" href="kontakt.html">Kontakt</a></li>-->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <article>
+        <header>
+            <section class="bg-light py-0">
+                    <div class="row gx-0 justify-content-center">
+                        <div class="col-xxl-8">
+                            <div class="text-center my-5">
+                                <h2 class="display-3 fw-bolder"><span>@ViewData["Title"]</span></h2>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+        </header>
+        <section>
+            @RenderBody()
+        </section>
+    </article>
+    <footer class="fixed-buttom py-5 bg-dark">
+        <div class="container"><p class="m-3 text-center text-white">Vytvořil &copy; Libor Koláček 2024</p></div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

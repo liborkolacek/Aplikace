@@ -1,0 +1,30 @@
+﻿@model Aplikace.Models.Pot
+
+@{
+    ViewData["Title"] = "Odstranění";
+}
+
+<h3>Opravdu chcete odstranit tuhle položku?</h3>
+<div>
+    <h4>Pot</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Size)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Size)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete" asp-route-id="@Model.PotId" method="post">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Zpět na seznam</a>
+    </form>
+</div>
